@@ -1,23 +1,19 @@
 import React from "react";
-import { BrowserRouter, Route, Link } from "react-router-dom";
-import { Header } from "semantic-ui-react";
+import { BrowserRouter, Route } from "react-router-dom";
 
 import StreamCreate from "./streams/StreamCreate";
 import StreamEdit from "./streams/StreamEdit";
 import StreamDelete from "./streams/StreamDelete";
 import StreamList from "./streams/StreamList";
 import StreamShow from "./streams/StreamShow";
+import Header from "./streams/header/Header.js";
 
 const App = () => {
   return (
     <div>
-      <Header className="ui secondary pointing menu">
-        <Link to="/" className="item">
-          LIVE-Stream
-        </Link>
-      </Header>
       <BrowserRouter>
         <div>
+          <Header />
           <Route path="/" exact component={StreamList} />
           <Route path="/stream/new" exact component={StreamCreate} />
           <Route path="/stream/edit" exact component={StreamEdit} />
