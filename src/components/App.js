@@ -1,5 +1,6 @@
 import React from "react";
 import { BrowserRouter, Route, Link } from "react-router-dom";
+import { Header } from "semantic-ui-react";
 
 import StreamCreate from "./streams/StreamCreate";
 import StreamEdit from "./streams/StreamEdit";
@@ -10,7 +11,11 @@ import StreamShow from "./streams/StreamShow";
 const App = () => {
   return (
     <div>
-      <h1>Header</h1>
+      <Header className="ui secondary pointing menu">
+        <Link to="/" className="item">
+          LIVE-Stream
+        </Link>
+      </Header>
       <BrowserRouter>
         <div>
           <Route path="/" exact component={StreamList} />
