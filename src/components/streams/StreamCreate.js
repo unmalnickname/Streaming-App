@@ -10,15 +10,24 @@ class StreamCreate extends React.Component {
       </div>
     );
   }
+
+  onSubmint(formValues) {
+    console.log(formValues);
+  }
+
   render() {
     return (
-      <form className="ui form">
+      <form
+        onSubmit={this.props.handleSubmit(this.onSubmint)}
+        className="ui form"
+      >
         <Field name="title" component={this.renderInput} label="Enter Title" />
         <Field
           name="Description"
           component={this.renderInput}
           label="Enter Description"
         />
+        <button className="ui button primary">Submit</button>
       </form>
     );
   }
